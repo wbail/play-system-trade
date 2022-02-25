@@ -8,11 +8,11 @@ namespace Play.Catalog.Service.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class CatalogController : ControllerBase
+public class ItemsController : ControllerBase
 {
     private readonly IItemsRepository _itemsRepository;
 
-    public CatalogController(IItemsRepository itemsRepository)
+    public ItemsController(IItemsRepository itemsRepository)
     {
         _itemsRepository = itemsRepository;
     }
