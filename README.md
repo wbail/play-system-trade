@@ -1,5 +1,9 @@
 # Play System Trade - Microservices
 
+### Docs
+
+- Postman Collection: [Docs](./Docs)
+
 ### Play.Catalog
 
 - Items
