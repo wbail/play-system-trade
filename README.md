@@ -4,14 +4,18 @@
 
 - Postman Collection: [Docs](./Docs)
 
-### Play.Catalog
-
-- Items
-
 ### Play.Common
 
 - Lib package
 
+### Play.Catalog
+
+- Items
+
+### Play.Inventory
+
+- Items
+- Items by User
 
 ## Installation
 
