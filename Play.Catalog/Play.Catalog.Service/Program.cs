@@ -1,5 +1,5 @@
 using Play.Catalog.Service.Entities;
-using Play.Catalog.Service.Extensions;
+using Play.Common.MongoDB;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,8 +17,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services
-    .AddMongo(configuration)
-    .AddRepository<Item>("items");
+    .AddMongo()
+    .AddMongoRepository<Item>("items");
 
 var app = builder.Build();
 
