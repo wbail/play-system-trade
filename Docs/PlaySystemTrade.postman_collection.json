@@ -14,11 +14,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}:{{port}}/api/items",
+							"raw": "{{hostCatalog}}:{{portCatalog}}/api/items",
 							"host": [
-								"{{host}}"
+								"{{hostCatalog}}"
 							],
-							"port": "{{port}}",
+							"port": "{{portCatalog}}",
 							"path": [
 								"api",
 								"items"
@@ -33,15 +33,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}:{{port}}/api/items/54221cfe-00e1-46da-8e22-197f2ae9fb5d",
+							"raw": "{{hostCatalog}}:{{portCatalog}}/api/items/de48348d-4a46-4218-977e-050d2fa11706",
 							"host": [
-								"{{host}}"
+								"{{hostCatalog}}"
 							],
-							"port": "{{port}}",
+							"port": "{{portCatalog}}",
 							"path": [
 								"api",
 								"items",
-								"54221cfe-00e1-46da-8e22-197f2ae9fb5d"
+								"de48348d-4a46-4218-977e-050d2fa11706"
 							]
 						}
 					},
@@ -54,7 +54,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Test\",\r\n    \"description\": \"Test Description\",\r\n    \"price\": \"7\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Test 1\",\r\n    \"description\": \"Test Description 1\",\r\n    \"price\": \"7\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -62,11 +62,11 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}:{{port}}/api/items",
+							"raw": "{{hostCatalog}}:{{portCatalog}}/api/items",
 							"host": [
-								"{{host}}"
+								"{{hostCatalog}}"
 							],
-							"port": "{{port}}",
+							"port": "{{portCatalog}}",
 							"path": [
 								"api",
 								"items"
@@ -90,15 +90,15 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}:{{port}}/api/items/54221cfe-00e1-46da-8e22-197f2ae9fb5d",
+							"raw": "{{hostCatalog}}:{{portCatalog}}/api/items/d2d59f0c-236d-478b-8f37-0c48fde13a02",
 							"host": [
-								"{{host}}"
+								"{{hostCatalog}}"
 							],
-							"port": "{{port}}",
+							"port": "{{portCatalog}}",
 							"path": [
 								"api",
 								"items",
-								"54221cfe-00e1-46da-8e22-197f2ae9fb5d"
+								"d2d59f0c-236d-478b-8f37-0c48fde13a02"
 							]
 						}
 					},
@@ -110,15 +110,131 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{host}}:{{port}}/api/items/54221cfe-00e1-46da-8e22-197f2ae9fb5d",
+							"raw": "{{hostCatalog}}:{{portCatalog}}/api/items/54221cfe-00e1-46da-8e22-197f2ae9fb5d",
 							"host": [
-								"{{host}}"
+								"{{hostCatalog}}"
 							],
-							"port": "{{port}}",
+							"port": "{{portCatalog}}",
 							"path": [
 								"api",
 								"items",
 								"54221cfe-00e1-46da-8e22-197f2ae9fb5d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Play.Inventory",
+			"item": [
+				{
+					"name": "Get All Items",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hostInventory}}:{{portInventory}}/api/items?userId=b907de3c-6571-412e-b06b-55de8109ef32",
+							"host": [
+								"{{hostInventory}}"
+							],
+							"port": "{{portInventory}}",
+							"path": [
+								"api",
+								"items"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "b907de3c-6571-412e-b06b-55de8109ef32"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Item",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hostInventory}}:{{portInventory}}/api/items/9c615626-168b-4ba3-bfb0-9acf40e885bb",
+							"host": [
+								"{{hostInventory}}"
+							],
+							"port": "{{portInventory}}",
+							"path": [
+								"api",
+								"items",
+								"9c615626-168b-4ba3-bfb0-9acf40e885bb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Item",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"b907de3c-6571-412e-b06b-55de8109ef32\",\r\n  \"catalogItemId\": \"de48348d-4a46-4218-977e-050d2fa11706\",\r\n  \"quantity\": 6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hostInventory}}:{{portInventory}}/api/items",
+							"host": [
+								"{{hostInventory}}"
+							],
+							"port": "{{portInventory}}",
+							"path": [
+								"api",
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Item",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{hostInventory}}:{{portInventory}}/api/items",
+							"host": [
+								"{{hostInventory}}"
+							],
+							"port": "{{portInventory}}",
+							"path": [
+								"api",
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Item",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{hostInventory}}:{{portInventory}}/api/items",
+							"host": [
+								"{{hostInventory}}"
+							],
+							"port": "{{portInventory}}",
+							"path": [
+								"api",
+								"items"
 							]
 						}
 					},
@@ -149,13 +265,23 @@
 	],
 	"variable": [
 		{
-			"key": "host",
+			"key": "hostCatalog",
 			"value": "http://localhost",
 			"type": "string"
 		},
 		{
-			"key": "port",
+			"key": "portCatalog",
 			"value": "5147",
+			"type": "string"
+		},
+		{
+			"key": "hostInventory",
+			"value": "http://localhost",
+			"type": "string"
+		},
+		{
+			"key": "portInventory",
+			"value": "5082",
 			"type": "string"
 		}
 	]
