@@ -1,4 +1,4 @@
-﻿using Play.Common;
+﻿using Play.Common.Entities;
 
 namespace Play.Inventory.Service.Entities;
 
