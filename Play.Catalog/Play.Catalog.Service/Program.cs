@@ -1,10 +1,15 @@
 using Play.Catalog.Service.Entities;
-using Play.Common.MongoDB;
+using Play.Common.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 var provider = builder.Services.BuildServiceProvider();
 var configuration = provider.GetService<IConfiguration>();
+
+builder.Services
+    .AddMongo(configuration)
+    .AddRepository<Item>("items")
+    .AddMassTransitRabbitMqConfiguration(configuration);
 
 // Add services to the container.
 builder.Services.AddControllers(options =>
@@ -15,10 +20,6 @@ builder.Services.AddControllers(options =>
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-builder.Services
-    .AddMongo()
-    .AddMongoRepository<Item>("items");
 
 var app = builder.Build();
 
